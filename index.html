@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Korena Head Spa — Demostración Interactiva | Un Ritual de Bienestar Premium</title>
+<meta name="description" content="Una demostración de concepto interactiva para Korena Head Spa, donde el cuidado del cuero cabelludo se convierte en un ritual de bienestar lento y lujoso.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1C1917">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Korena Head Spa — Demostración Interactiva">
+<meta property="og:description" content="Un ritual de bienestar premium, reimaginado. Una demostración de concepto interactivo.">
+<meta property="og:image" content="assets/images/relaxation.webp">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Korena Head Spa — Demostración Interactiva">
+<meta name="twitter:description" content="Un ritual de bienestar premium, reimaginado. Una demostración de concepto interactivo.">
+<meta name="twitter:image" content="assets/images/relaxation.webp">
+
+<link rel="canonical" href="#">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231C1917'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='30' fill='%23FBF8F4' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Remix Icons -->
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          korblack: '#1C1917',
+          korwhite: '#FBF8F4',
+          korsand: '#E8DDCE',
+          korbeige: '#F1E9DD',
+          korgray: '#8A8078',
+          korlavender: '#B8A9C9',
+          kormauve: '#D9B8BE',
+          korrose: '#C99AA0',
+        },
+        fontFamily: {
+          display: ['"Cormorant Garamond"', 'serif'],
+          body: ['Inter', 'sans-serif'],
+        },
+        letterSpacing: {
+          widest2: '0.28em',
+        },
+      }
+    }
+  }
+</script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-korwhite text-korblack font-body antialiased">
+
+<!-- ================= PANTALLA DE CARGA ================= -->
+<div id="loader" class="loader" aria-hidden="true">
+  <span class="loader-mark font-display">Korena</span>
+</div>
+
+<a href="#main" class="skip-link">Saltar al contenido</a>
+
+<!-- ================= INSIGNIA DE DEMOSTRACIÓN ================= -->
+<button type="button" id="demoBadgeBtn" class="demo-badge" data-modal-title="Sobre Esta Demostración" data-modal-text="Este sitio web es un concepto interactivo creado exclusivamente para demostrar un rediseño premium de Korena Head Spa. Los precios, horarios, el catálogo, la conversación de WhatsApp y la ubicación en el mapa que se muestran son contenido de muestra, creado únicamente para ilustrar cómo podría verse y sentirse la experiencia final.">
+  <span class="demo-badge-dot" aria-hidden="true"></span>
+  Demostración Interactiva
+</button>
+
+<!-- ================= RIEL DEL RECORRIDO (elemento distintivo) ================= -->
+<nav class="journey-rail" aria-label="Recorrido emocional a través de la página">
+  <ol>
+    <li data-stage="curiosity"><span class="journey-dot"></span><span class="journey-label">Curiosidad</span></li>
+    <li data-stage="interest"><span class="journey-dot"></span><span class="journey-label">Interés</span></li>
+    <li data-stage="relaxation"><span class="journey-dot"></span><span class="journey-label">Relajación</span></li>
+    <li data-stage="trust"><span class="journey-dot"></span><span class="journey-label">Confianza</span></li>
+    <li data-stage="desire"><span class="journey-dot"></span><span class="journey-label">Deseo</span></li>
+    <li data-stage="action"><span class="journey-dot"></span><span class="journey-label">Acción</span></li>
+  </ol>
+</nav>
+
+<!-- ================= NAVEGACIÓN ================= -->
+<header id="siteNav" class="site-nav">
+  <div class="site-nav-inner">
+    <a href="#home" class="nav-logo font-display" aria-label="Korena Head Spa — inicio">Korena</a>
+
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a href="#experience">Experiencia</a>
+      <a href="#services">Servicios</a>
+      <a href="#gallery">Galería</a>
+      <a href="#catalog">Catálogo</a>
+      <a href="#prices">Precios</a>
+      <a href="https://www.instagram.com/korenaheadspa/" target="_blank" rel="noopener">Instagram</a>
+      <a href="#location">Ubicación</a>
+      <a href="#cta">Contacto</a>
+    </nav>
+
+    <a href="#cta" class="nav-cta">Reserva tu Experiencia</a>
+
+    <button type="button" id="menuToggle" class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+      <i class="ri-menu-3-line" aria-hidden="true"></i>
+    </button>
+  </div>
+</header>
+
+<!-- ================= MENÚ MÓVIL ================= -->
+<div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+  <div class="mobile-menu-panel">
+    <div class="mobile-menu-head">
+      <span class="font-display">Korena</span>
+      <button type="button" id="menuClose" aria-label="Cerrar menú">
+        <i class="ri-close-line" aria-hidden="true"></i>
+      </button>
+    </div>
+    <nav aria-label="Navegación móvil">
+      <a href="#experience">Experiencia</a>
+      <a href="#services">Servicios</a>
+      <a href="#gallery">Galería</a>
+      <a href="#catalog">Catálogo</a>
+      <a href="#prices">Precios</a>
+      <a href="https://www.instagram.com/korenaheadspa/" target="_blank" rel="noopener">Instagram</a>
+      <a href="#location">Ubicación</a>
+      <a href="#cta">Contacto</a>
+    </nav>
+    <a href="#cta" class="mobile-menu-cta">Reserva tu Experiencia</a>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section id="home" class="hero" data-stage="curiosity" aria-label="Introducción">
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/images/hero-model.webp" aria-hidden="true">
+      <source src="assets/videos/hero-video.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-particles" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <div class="hero-content">
+      <p class="eyebrow eyebrow-light reveal-up">Korena Head Spa</p>
+      <h1 class="hero-title reveal-up">Un Ritual<br>Diseñado Para Ti</h1>
+      <p class="hero-sub reveal-up">Korena Head Spa transforma el cuidado del cuero cabelludo en un acto de bienestar lento y deliberado, donde cada visita se convierte en un momento de paz.</p>
+      <div class="hero-actions reveal-up">
+        <a href="#cta" class="btn btn-primary">Reserva tu Experiencia</a>
+        <a href="#experience" class="btn btn-ghost-light" data-scroll>Explora la Experiencia</a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" aria-hidden="true">
+      <span class="scroll-indicator-line"></span>
+      <span class="scroll-indicator-text">Desplázate</span>
+    </div>
+  </section>
+
+  <!-- ================= LA EXPERIENCIA KORENA ================= -->
+  <section id="experience" class="experience-section" data-stage="interest" aria-labelledby="experience-title">
+    <div class="experience-grid">
+      <div class="experience-media">
+        <img src="assets/images/head-massage.webp" alt="Una huésped descansando con los ojos cerrados mientras recibe un masaje capilar lento y deliberado en Korena Head Spa" loading="lazy" class="reveal-img">
+      </div>
+      <div class="experience-copy">
+        <p class="eyebrow reveal-up">El Ritual Korena</p>
+        <h2 id="experience-title" class="section-title reveal-up">Más Que<br>Cuidado Capilar</h2>
+        <p class="section-text reveal-up">Cada ritual está diseñado para restaurar el equilibrio, reducir el estrés y transformar el cuidado del cuero cabelludo en una experiencia de bienestar de lujo.</p>
+        <a href="#benefits" class="btn btn-outline reveal-up" data-scroll>Descubre el Ritual</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CITA A PANTALLA COMPLETA ================= -->
+  <section class="quote-section" data-stage="interest" aria-label="Filosofía de la marca">
+    <p class="quote-text reveal-up">El autocuidado no es un lujo.<br><em>Es un ritual.</em></p>
+  </section>
+
+  <!-- ================= BENEFICIOS ================= -->
+  <section id="benefits" class="benefits-section" data-stage="interest" aria-labelledby="benefits-title">
+    <div class="section-head">
+      <p class="eyebrow reveal-up">Lo Que Sentirás</p>
+      <h2 id="benefits-title" class="section-title reveal-up">El Efecto Korena</h2>
+    </div>
+    <div class="benefits-grid">
+      <article class="benefit-card reveal-up">
+        <i class="ri-drop-line benefit-icon" aria-hidden="true"></i>
+        <h3>Detox Profundo</h3>
+        <p>Purifica y refresca tu cuero cabelludo.</p>
+      </article>
+      <article class="benefit-card reveal-up">
+        <i class="ri-cloud-line benefit-icon" aria-hidden="true"></i>
+        <h3>Alivio del Estrés</h3>
+        <p>Libera la tensión física y mental.</p>
+      </article>
+      <article class="benefit-card reveal-up">
+        <i class="ri-sparkling-2-line benefit-icon" aria-hidden="true"></i>
+        <h3>Cabello Saludable</h3>
+        <p>Recupera brillo, suavidad y vitalidad.</p>
+      </article>
+      <article class="benefit-card reveal-up">
+        <i class="ri-vip-crown-2-line benefit-icon" aria-hidden="true"></i>
+        <h3>Ritual Premium</h3>
+        <p>Técnicas de lujo inspiradas en el bienestar coreano.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= SERVICIOS ================= -->
+  <section id="services" class="services-section" data-stage="trust" aria-labelledby="services-title">
+    <div class="section-head">
+      <p class="eyebrow reveal-up">Rituales Insignia</p>
+      <h2 id="services-title" class="section-title reveal-up">Nuestros Rituales Insignia</h2>
+    </div>
+    <div class="services-grid">
+
+      <button type="button" class="service-card reveal-up" data-modal-title="Ritual Head Spa" data-modal-text="Este es un servicio de demostración. La información completa del servicio estaría disponible en el sitio web final.">
+        <img src="assets/images/head-massage.webp" alt="" loading="lazy">
+        <span class="service-card-body">
+          <span class="service-card-name">Ritual Head Spa</span>
+          <span class="service-card-arrow"><i class="ri-arrow-right-up-line" aria-hidden="true"></i> Más Información</span>
+        </span>
+      </button>
+
+      <button type="button" class="service-card reveal-up" data-modal-title="Detox Profundo del Cuero Cabelludo" data-modal-text="Este es un servicio de demostración. La información completa del servicio estaría disponible en el sitio web final.">
+        <img src="assets/images/relaxation.webp" alt="" loading="lazy">
+        <span class="service-card-body">
+          <span class="service-card-name">Detox Profundo del Cuero Cabelludo</span>
+          <span class="service-card-arrow"><i class="ri-arrow-right-up-line" aria-hidden="true"></i> Más Información</span>
+        </span>
+      </button>
+
+      <button type="button" class="service-card reveal-up" data-modal-title="Revitalización Capilar" data-modal-text="Este es un servicio de demostración. La información completa del servicio estaría disponible en el sitio web final.">
+        <img src="assets/images/hero-model.webp" alt="" loading="lazy">
+        <span class="service-card-body">
+          <span class="service-card-name">Revitalización Capilar</span>
+          <span class="service-card-arrow"><i class="ri-arrow-right-up-line" aria-hidden="true"></i> Más Información</span>
+        </span>
+      </button>
+
+      <button type="button" class="service-card reveal-up" data-modal-title="Terapia de Relajación" data-modal-text="Este es un servicio de demostración. La información completa del servicio estaría disponible en el sitio web final.">
+        <img src="assets/images/waterfall-rinse-poster.webp" alt="" loading="lazy">
+        <span class="service-card-body">
+          <span class="service-card-name">Terapia de Relajación</span>
+          <span class="service-card-arrow"><i class="ri-arrow-right-up-line" aria-hidden="true"></i> Más Información</span>
+        </span>
+      </button>
+
+    </div>
+  </section>
+
+  <!-- ================= GALERÍA INMERSIVA ================= -->
+  <section id="gallery" class="gallery-section" data-stage="relaxation" aria-labelledby="gallery-title">
+    <div class="section-head">
+      <p class="eyebrow reveal-up">Una Mirada Más Cercana</p>
+      <h2 id="gallery-title" class="section-title reveal-up">Dentro del Ritual</h2>
+    </div>
+
+    <div class="gallery-item gallery-item-video reveal-up">
+      <video autoplay muted loop playsinline preload="metadata" poster="assets/images/experience-video-poster.webp" aria-label="Metraje en cámara lenta de un tratamiento de Korena Head Spa en progreso">
+        <source src="assets/videos/experience-video.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="gallery-item gallery-item-image reveal-img">
+      <img src="assets/images/hero-model.webp" alt="Primer plano de cabello saludable y brillante después de un ritual de Korena Head Spa" loading="lazy">
+    </div>
+
+    <div class="gallery-item gallery-item-video reveal-up">
+      <video autoplay muted loop playsinline preload="metadata" poster="assets/images/premium-products.webp" aria-label="Metraje en primer plano de un tratamiento capilar de limpieza con espuma">
+        <source src="assets/videos/foam-treatment.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="gallery-item gallery-item-full reveal-up">
+      <video autoplay muted loop playsinline preload="metadata" poster="assets/images/waterfall-rinse-poster.webp" aria-label="Metraje inmersivo de un enjuague cálido tipo cascada">
+        <source src="assets/videos/waterfall-rinse.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
+
+  <!-- ================= PRODUCTOS PREMIUM ================= -->
+  <section id="products" class="products-section" data-stage="trust" aria-labelledby="products-title">
+    <div class="products-grid">
+      <div class="products-media">
+        <img src="assets/images/premium-products.webp" alt="Aceites premium de bienestar seleccionados para el ritual de Korena Head Spa" loading="lazy" class="reveal-img">
+      </div>
+      <div class="products-copy">
+        <p class="eyebrow reveal-up">Productos Premium</p>
+        <h2 id="products-title" class="section-title reveal-up">Cuidado<br>Hasta La Última Gota</h2>
+        <p class="section-text reveal-up">Productos profesionales cuidadosamente seleccionados para complementar cada ritual de bienestar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CATÁLOGO ================= -->
+  <section id="catalog" class="catalog-section" data-stage="desire" aria-labelledby="catalog-title">
+    <div class="section-head">
+      <span class="pill-badge reveal-up">Contenido de Demostración</span>
+      <p class="eyebrow reveal-up">Un Vistazo de Muestra</p>
+      <h2 id="catalog-title" class="section-title reveal-up">Catálogo de Servicios de Muestra</h2>
+    </div>
+    <div class="catalog-grid">
+
+      <button type="button" class="catalog-card reveal-up" data-modal-title="Head Spa Insignia" data-modal-text="Precio de muestra mostrado solo con fines de demostración. El precio final se confirmaría directamente con Korena Head Spa.">
+        <span class="catalog-card-top">
+          <span class="catalog-card-name">Head Spa Insignia</span>
+          <span class="catalog-card-duration">90 min</span>
+        </span>
+        <span class="catalog-card-desc">Un ritual completo que combina masaje capilar, limpieza profunda y un enjuague cálido.</span>
+        <span class="catalog-card-bottom">
+          <span><span class="sample-label">Precio de Muestra</span><span class="catalog-card-price">$1,490 MXN</span></span>
+          <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+        </span>
+      </button>
+
+      <button type="button" class="catalog-card reveal-up" data-modal-title="Ritual de Detox de Lujo" data-modal-text="Precio de muestra mostrado solo con fines de demostración. El precio final se confirmaría directamente con Korena Head Spa.">
+        <span class="catalog-card-top">
+          <span class="catalog-card-name">Ritual de Detox de Lujo</span>
+          <span class="catalog-card-duration">75 min</span>
+        </span>
+        <span class="catalog-card-desc">Un tratamiento purificante de espuma diseñado para renovar un cuero cabelludo cansado y sobrecargado.</span>
+        <span class="catalog-card-bottom">
+          <span><span class="sample-label">Precio de Muestra</span><span class="catalog-card-price">$1,190 MXN</span></span>
+          <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+        </span>
+      </button>
+
+      <button type="button" class="catalog-card reveal-up" data-modal-title="Recuperación Capilar" data-modal-text="Precio de muestra mostrado solo con fines de demostración. El precio final se confirmaría directamente con Korena Head Spa.">
+        <span class="catalog-card-top">
+          <span class="catalog-card-name">Recuperación Capilar</span>
+          <span class="catalog-card-duration">60 min</span>
+        </span>
+        <span class="catalog-card-desc">Un tratamiento enfocado para restaurar el equilibrio después de daño por color o calor.</span>
+        <span class="catalog-card-bottom">
+          <span><span class="sample-label">Precio de Muestra</span><span class="catalog-card-price">$990 MXN</span></span>
+          <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+        </span>
+      </button>
+
+      <button type="button" class="catalog-card reveal-up" data-modal-title="Ritual Premium de Relajación" data-modal-text="Precio de muestra mostrado solo con fines de demostración. El precio final se confirmaría directamente con Korena Head Spa.">
+        <span class="catalog-card-top">
+          <span class="catalog-card-name">Ritual Premium de Relajación</span>
+          <span class="catalog-card-duration">120 min</span>
+        </span>
+        <span class="catalog-card-desc">La experiencia Korena completa: masaje, detox, enjuague y una terapia de relajación final.</span>
+        <span class="catalog-card-bottom">
+          <span><span class="sample-label">Precio de Muestra</span><span class="catalog-card-price">$1,790 MXN</span></span>
+          <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+        </span>
+      </button>
+
+    </div>
+  </section>
+
+  <!-- ================= PRECIOS ================= -->
+  <section id="prices" class="prices-section" data-stage="desire" aria-labelledby="prices-title">
+    <div class="section-head">
+      <span class="pill-badge reveal-up">Precios de Muestra</span>
+      <p class="eyebrow reveal-up">Contenido de Demostración</p>
+      <h2 id="prices-title" class="section-title reveal-up">Un Ejemplo de Nuestros Precios</h2>
+      <p class="section-text section-text-center reveal-up">Un vistazo representativo de cómo podrían presentarse los precios — las cifras mostradas aquí son solo ejemplos.</p>
+    </div>
+    <div class="prices-grid">
+
+      <div class="price-card reveal-up">
+        <span class="sample-label">Precio de Muestra</span>
+        <h3>Head Spa Esencial</h3>
+        <p class="price-amount">$990 <span>MXN</span></p>
+        <p class="price-duration">60 Minutos</p>
+        <button type="button" class="btn btn-outline btn-full" data-modal-title="Head Spa Esencial" data-modal-text="Este precio es solo representativo. La tarifa final se confirmaría directamente con Korena Head Spa.">Más Información</button>
+      </div>
+
+      <div class="price-card price-card-featured reveal-up">
+        <span class="sample-label sample-label-light">Precio de Muestra</span>
+        <h3>Ritual Premium</h3>
+        <p class="price-amount">$1,490 <span>MXN</span></p>
+        <p class="price-duration">90 Minutos</p>
+        <button type="button" class="btn btn-primary btn-full" data-modal-title="Ritual Premium" data-modal-text="Este precio es solo representativo. La tarifa final se confirmaría directamente con Korena Head Spa.">Más Información</button>
+      </div>
+
+      <div class="price-card reveal-up">
+        <span class="sample-label">Precio de Muestra</span>
+        <h3>Experiencia de Lujo</h3>
+        <p class="price-amount">$1,990 <span>MXN</span></p>
+        <p class="price-duration">120 Minutos</p>
+        <button type="button" class="btn btn-outline btn-full" data-modal-title="Experiencia de Lujo" data-modal-text="Este precio es solo representativo. La tarifa final se confirmaría directamente con Korena Head Spa.">Más Información</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= HORARIO ================= -->
+  <section id="schedule" class="schedule-section" data-stage="desire" aria-labelledby="schedule-title">
+    <div class="schedule-grid">
+      <div class="schedule-copy">
+        <span class="pill-badge reveal-up">Horario de Ejemplo</span>
+        <p class="eyebrow reveal-up">Planea tu Visita</p>
+        <h2 id="schedule-title" class="section-title reveal-up">Un Ejemplo de Nuestro Horario</h2>
+        <p class="section-text reveal-up">Mostrado aquí solo para ilustrar cómo podrían aparecer los horarios en el sitio web final.</p>
+      </div>
+      <ul class="schedule-list reveal-up">
+        <li><span>Lunes</span><span>09:00 — 18:00</span></li>
+        <li><span>Martes</span><span>09:00 — 18:00</span></li>
+        <li><span>Miércoles</span><span>09:00 — 18:00</span></li>
+        <li><span>Jueves</span><span>09:00 — 18:00</span></li>
+        <li><span>Viernes</span><span>09:00 — 19:00</span></li>
+        <li><span>Sábado</span><span>10:00 — 17:00</span></li>
+        <li><span>Domingo</span><span class="closed">Cerrado</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= INSTAGRAM ================= -->
+  <section id="instagram" class="instagram-section" data-stage="action" aria-labelledby="instagram-title">
+    <i class="ri-instagram-line instagram-icon" aria-hidden="true"></i>
+    <p class="eyebrow eyebrow-light reveal-up">Descubre Más Momentos</p>
+    <h2 id="instagram-title" class="section-title-light reveal-up">Sigue a Korena Head Spa<br>en Instagram</h2>
+    <a href="https://www.instagram.com/korenaheadspa/" target="_blank" rel="noopener" class="btn btn-ghost-light reveal-up">
+      @korenaheadspa
+    </a>
+  </section>
+
+  <!-- ================= UBICACIÓN ================= -->
+  <section id="location" class="location-section" data-stage="action" aria-labelledby="location-title">
+    <div class="location-grid">
+      <div class="location-copy">
+        <span class="pill-badge reveal-up">Ubicación de Concepto</span>
+        <p class="eyebrow reveal-up">Dirección de Ejemplo</p>
+        <h2 id="location-title" class="section-title reveal-up">Visita el Ritual</h2>
+        <p class="section-text reveal-up">Una ubicación de muestra mostrada solo con fines de demostración.</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Canc%C3%BAn%2C+Quintana+Roo%2C+M%C3%A9xico" target="_blank" rel="noopener" class="btn btn-outline reveal-up">
+          Ver Ubicación de Ejemplo
+        </a>
+      </div>
+      <div class="location-map reveal-img">
+        <iframe
+          src="https://www.google.com/maps?q=Canc%C3%BAn,+Quintana+Roo,+M%C3%A9xico&output=embed"
+          title="Ubicación de ejemplo en el mapa para la demostración de Korena Head Spa"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA FINAL ================= -->
+  <section id="cta" class="cta-section" data-stage="action" aria-labelledby="cta-title">
+    <img src="assets/images/relaxation.webp" alt="Una huésped en un estado de completa relajación, representando el final del ritual de Korena Head Spa" loading="lazy" class="cta-bg">
+    <div class="cta-overlay" aria-hidden="true"></div>
+    <div class="cta-content">
+      <h2 id="cta-title" class="section-title-light reveal-up">Tu Viaje de Bienestar<br>Comienza Aquí</h2>
+      <p class="section-text-light reveal-up">Vive una nueva forma de reconectar contigo mismo.</p>
+      <a href="https://wa.me/529980000000?text=%C2%A1Hola%21%20Vengo%20desde%20la%20demostraci%C3%B3n%20del%20sitio%20web%20de%20Korena%20Head%20Spa.%20Entiendo%20que%20esta%20es%20solo%20una%20conversaci%C3%B3n%20de%20muestra." target="_blank" rel="noopener" class="btn btn-primary reveal-up">
+        Reserva tu Experiencia
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= PIE DE PÁGINA ================= -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span class="font-display footer-logo">Korena</span>
+      <p>Un ritual de bienestar premium para el cuero cabelludo, el cabello y la mente.</p>
+    </div>
+    <div class="footer-links">
+      <div>
+        <h4>Navegación</h4>
+        <a href="#experience">Experiencia</a>
+        <a href="#services">Servicios</a>
+        <a href="#gallery">Galería</a>
+        <a href="#catalog">Catálogo</a>
+        <a href="#prices">Precios</a>
+      </div>
+      <div>
+        <h4>Conecta</h4>
+        <a href="https://www.instagram.com/korenaheadspa/" target="_blank" rel="noopener"><i class="ri-instagram-line" aria-hidden="true"></i> Instagram</a>
+        <a href="https://wa.me/529980000000?text=%C2%A1Hola%21%20Vengo%20desde%20la%20demostraci%C3%B3n%20del%20sitio%20web%20de%20Korena%20Head%20Spa.%20Entiendo%20que%20esta%20es%20solo%20una%20conversaci%C3%B3n%20de%20muestra." target="_blank" rel="noopener"><i class="ri-whatsapp-line" aria-hidden="true"></i> WhatsApp</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Canc%C3%BAn%2C+Quintana+Roo%2C+M%C3%A9xico" target="_blank" rel="noopener"><i class="ri-map-pin-line" aria-hidden="true"></i> Ubicación</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Korena Head Spa. Demostración interactiva.</p>
+    <p class="footer-disclaimer">Este sitio web es un concepto interactivo creado exclusivamente con fines de demostración.</p>
+  </div>
+</footer>
+
+<!-- ================= FLOTANTE DE WHATSAPP ================= -->
+<a href="https://wa.me/529980000000?text=%C2%A1Hola%21%20Vengo%20desde%20la%20demostraci%C3%B3n%20del%20sitio%20web%20de%20Korena%20Head%20Spa.%20Entiendo%20que%20esta%20es%20solo%20una%20conversaci%C3%B3n%20de%20muestra."
+   target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chatea por WhatsApp — número de demostración">
+  <i class="ri-whatsapp-line" aria-hidden="true"></i>
+</a>
+
+<!-- ================= MODAL COMPARTIDO ================= -->
+<div id="modalOverlay" class="modal-overlay" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
+    <button type="button" id="modalClose" class="modal-close" aria-label="Cerrar diálogo">
+      <i class="ri-close-line" aria-hidden="true"></i>
+    </button>
+    <span class="pill-badge">Contenido de Demostración</span>
+    <h3 id="modalTitle" class="font-display"></h3>
+    <p id="modalText"></p>
+  </div>
+</div>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
